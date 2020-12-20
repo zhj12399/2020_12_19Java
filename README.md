@@ -1,1 +1,21 @@
-# 2020_12_19Java
+# 程序功能说明
+
+程序主要实现了一个类似于发布求助信息，帮助他人的求助的平台，每一个用户都可以注册账号并登陆账号，然后发布自己的求助信息，如“求租自行车一天”，“求二手书《数学分析》”等。每一个用户也可以查看到其它人发布的求助信息，并选择性的进行帮助他人解决问题。
+程序的功能和初衷大致是大致完成一个类似于二手交易平台或者像是外卖平台的操作
+
+# 程序运行方式
+
+由于本人开发在MacOS平台上完成，导致文件相互依赖的相对路径和索引会有一些问题，如果想尝试运行源代码请修改DBPeopleManager, dbMenuManager, ShowMyInfor三个文件下的相对路径，并手动将jdbc倒入至structure，以及将两个db文件设置为resources
+
+# 程序内容说明
+
+整个代码的逻辑框架：
+
+1. DbMenu下实现了一个接口dbMenuManager和一个方法menuRepository用来控制和菜单数据库的连接
+2. DbPeople下实现了一个接口dbPeopleManager和一个方法peopleRepository用来控制和用户数据库的连接
+3. Home下多个界面展示内容：
+	其中Home是所有菜单的展示窗口，ShowMenu是展示菜单详细内容的窗口，ShowMyInfor是展示个人信息的窗口，ShowMyReceive是展示我的接单的窗口，ShowMyMenus是展示我的发布的窗口，UpdateMenu是增添发布信息的窗口，ModifyMenu是修改发布的信息的窗口
+4. Login下多个入口界面的窗口：
+	Login是登陆界面，Main是整个程序主入口，Register是注册账户界面
+5. Things下有两个类也是本程序最关键的两个对象，菜单和用户：
+	People和Menu
